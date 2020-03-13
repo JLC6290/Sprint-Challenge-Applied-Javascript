@@ -30,13 +30,23 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+**The DOM is a standardized model for working with XML and HTML. The entire HTML document is treated as a logical tree structure, with every node represented as an object. The DOM is ultimately implemented via libraries utilized in browser engines.**
+
 2. What is an event?
+
+**An event is any action recognized by software.**
 
 3. What is an event listener?
 
+**A piece of code which is triggered upon a specified event.**
+
 4. Why would we convert a NodeList into an Array?
 
+**In order to employ array methods, which otherwise are not available to NodeLists that are actually 'array-like' objects. Only forEach is accessible by NodeList.**
+
 5. What is a component?
+
+**Components are modular, functional pieces of code. They're characterized by their re-usability, and enable design of flexible and dynamic software.**
 
 ### Git Set up
 
