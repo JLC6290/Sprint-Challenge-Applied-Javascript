@@ -30,14 +30,55 @@ function createCarousel() {
   carousel.classList.add('carousel');
   leftButton.classList.add('left-button');
   rightButton.classList.add('right-button');
-  img1.src = './assets/carousel/mountains/jpeg'
-  img2.src = './assets/carousel/computer/jpeg'
-  img3.src = './assets/carousel/trees/jpeg'
-  img4.src = './assets/carousel/turntable/jpeg'
+  img1.src = './assets/carousel/mountains.jpeg';
+  img2.src = './assets/carousel/computer.jpeg';
+  img3.src = './assets/carousel/trees.jpeg';
+  img4.src = './assets/carousel/turntable.jpeg';
 
   carousel.append(leftButton, img1, img2, img3, img4, rightButton);
+
+  var images = [img1, img2, img3, img4];
+  var counter = 0;
+  rightButton.addEventListener('click', (event) => {
+    if(counter > 3) {
+      counter = 0;
+      images[3].style.display = 'none';
+    }
+    images[counter].style.display = 'block';
+    if(counter > 0) {images[counter-1].style.display = 'none';}
+    counter++;
+  })
+  leftButton.addEventListener('click', (event) => {
+    counter--;
+    if(counter < 0) {
+      counter = 3;
+      images[0].style.display = 'none';
+    }
+    images[counter].style.display = 'block';
+    if(counter < 3) {images[counter+1].style.display = 'none';}
+  })
 
   return carousel;
 }
 
 document.querySelector('.carousel-container').append(createCarousel());
+
+
+
+// var slideIndex = 1;
+// showDivs(slideindex);
+
+// function plusDivs(n) {
+//   showDivs(slideIndex += n);
+// }
+
+// function showDivs(n) {
+//   var i;
+//   var x = document.querySelectorAll('.carousel img');
+//   if(n > x.length) {slideIndex = 1}
+//   if(n < 1) {slideIndex = x.length};
+//   for(i = 0; i < x.length; i++) {
+//     x[i].style.display = 'none';
+//   }
+//   x[slideIndex-1].style.display = 'block';
+// }
